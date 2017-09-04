@@ -7,3 +7,5 @@
 ![Alt text](screenshot3.png?raw=true "Three")
 **If user confirms order, confirmation is printed to the terminal.**
 ![Alt text](screenshot4.png?raw=true "Four")
+**The purchased inventory is deducted from the stock_quantity in the products table of the mysql database.**
+![Alt text](screenshot5.png?raw=true "Five")
