@@ -36,9 +36,9 @@ function getItem() {
         message: "Type the id number of the item you wish to purchase"
         }
     ]).then(function(item) {
-        id = item.item_id;
-        if (isNaN(id) || id < 1 || id > numOfProducts) {
-            console.log("\nInvalid Input. Please choose a number betweet 1 and " + numOfProducts + ".\n");
+        id = Number(item.item_id);
+        if (isNaN(id) || Number.isInteger(id) == false || id < 1 || id > numOfProducts) {
+            console.log("\nInvalid Input. Please choose a whole number from 1 to " + numOfProducts + ".\n");
             getItem();
         }
         else {
@@ -49,10 +49,10 @@ function getItem() {
                 message: "How many would you like to purchase?"
                 }
             ]).then(function(quantity) {
-                var purchaseAmount = quantity.quantity;
-                console.log(purchaseAmount);
-                    if (isNaN(purchaseAmount) || purchaseAmount < 1) {
-                        console.log("\nInvalid Input. Please try again.\n");
+                var purchaseAmount = Number(quantity.quantity);
+                // console.log(purchaseAmount);
+                    if (isNaN(purchaseAmount) || Number.isInteger(purchaseAmount) == false || purchaseAmount < 1) {
+                        console.log("\nInvalid Input. Purchase amount must be a whole number greater than or equal to one. Please try again.\n");
                         getItem();
                     }
                     else {
